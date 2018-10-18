@@ -8,5 +8,5 @@
 5) Run the script.
 
 ## Credits
-Thanks [dominictarr](https://github.com/dominictarr/random-name) for the list of first names!
+Thanks [dominictarr](https://github.com/dominictarr/random-name) for the list of first names!  
 Thanks [rossgoodwin](https://github.com/rossgoodwin/american-names) for the list of surnames!
