@@ -6,3 +6,7 @@
 3) In line 2, change the number of users you'd like to create.
 4) In lines 5 and 6, change the path to `first-names.json` and `surnames.json` to the path where you decompressed the repository.
 5) Run the script.
+
+## Credits
+Thanks [dominictarr](https://github.com/dominictarr/random-name) for the list of first names!
+Thanks [rossgoodwin](https://github.com/rossgoodwin/american-names) for the list of surnames!
