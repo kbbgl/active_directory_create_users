@@ -21,7 +21,9 @@ write-host "Number of first names available: $firstNamesLength"
 Write-Host "Number of surnames available: $surnameLength"
 
 Write-Host "Will create $numberUsers users."
-[System.Collections.ArrayList]$users = New-Object object[] $numberUsers
+
+# Create empty array to add users
+$users = @()
 
 # Create users
 For ($i = 0; $i -lt $numberUsers; $i++){
@@ -77,14 +79,15 @@ For ($i = 0; $i -lt $numberUsers; $i++){
             'wWWHomePage'="www.ADTest.com/$firstName.$lastName";
             'initials'="$initials";
          } -PassThru | Select-Object -ExpandProperty DistinguishedName
-         $users.Add($user)      
+         Write-Host "created user $user"
+         $users += $user
 } 
 
 # Create groups and add users
 For ($i = 0; $i -lt $numberOfGroups; $i++){
 
     $name = "Kobbi-TestGroup $i"
-    New-ADGroup -Name $name -GroupCategory 0 -GroupScope Global -PassThru | Select-Object -Property DistinguishedName
+    New-ADGroup -Name $name -GroupCategory 1 -GroupScope Global -PassThru | Select-Object -Property DistinguishedName
     $group = Get-ADGroup -Identity $name
     Write-Host "created group $group"
 
